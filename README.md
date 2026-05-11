@@ -7,17 +7,30 @@
 
 ## Install
 
-\`\`\`bash
+```bash
 npm install @creadev.org/event
-\`\`\`
+```
 
 ## Usage
 
-\`\`\`typescript
-import { } from '@creadev.org/event';
+```typescript
+import { EventEmitter, Queue, PubSub, createEvent } from '@creadev.org/event';
 
-// ...
-\`\`\`
+const emitter = createEvent();
+emitter.on('event', (data) => console.log(data));
+emitter.emit('event', { data: 'value' });
+
+const queue = new Queue();
+await queue.enqueue('job', { data: 'job' });
+```
+
+## API
+
+| Class | Description |
+|-------|-------------|
+| `EventEmitter<T>` | Event emitter |
+| `Queue` | Job queue |
+| `PubSub` | Publish-subscribe |
 
 ## License
 
