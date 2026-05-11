@@ -35,3 +35,4 @@ await queue.enqueue('job', { data: 'job' });
 ## License
 
 MIT
+trigger
